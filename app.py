@@ -19,8 +19,7 @@ def start():
                     # prikitiw is the keyword
                     # if you want to turn off the case sensitive like: priktiw, Prikitiw, pRiKiTiw
                     # just use lower(message) and check it, but please remove the replace function line
-                    if "prikitiw" in message:
-                        message = message.replace("prikitiw", "")
+                    if "sad" in message.lower():
                         if len(message) is not 0:
                             if dms[i]['media'] is None:
                                 print("DM will be posted")
@@ -44,7 +43,7 @@ def start():
             print("Direct message is empty...")
             dms = tw.read_dm()
             if len(dms) is 0 or dms is None:
-                time.sleep(60)
+                time.sleep(40)
 
 if __name__ == "__main__":
     start()

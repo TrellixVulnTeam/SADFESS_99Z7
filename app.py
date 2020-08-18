@@ -43,7 +43,7 @@ def start():
             print("Direct message is empty...")
             dms = tw.read_dm()
             if len(dms) is 0 or dms is None:
-                time.sleep(40)
+                time.sleep(30)
 
 if __name__ == "__main__":
     start()

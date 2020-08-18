@@ -14,6 +14,7 @@ def start():
                 # I take sender_id just in case you want to know who's sent the message
                 sender_id = dms[i]['sender_id']
                 id = dms[i]['id']
+                text = "Tweet kamu udah terkirim ya. Kamu udahan ya sedihnya, jangan sedih terus :("
 
                 if len(message) is not 0 and len(message) < 280:
                     # prikitiw is the keyword
@@ -21,15 +22,16 @@ def start():
                     # just use lower(message) and check it, but please remove the replace function line
                     if "sad" in message.lower():
                         if len(message) is not 0:
-                            tw.direct_message(user['sender_id'], text="Ditunggu ya, nanti kalau udah kekirim dikasih tau kok.")
                             if dms[i]['media'] is None:
                                 print("DM will be posted")
                                 tw.post_tweet(message)
+                                tw.send_dm(sender_id, text)
                                 tw.delete_dm(id)
                             else:
                                 print("DM will be posted with media")
                                 print(dms[i]['shorted_media_url'])
                                 tw.post_tweet_with_media(message, dms[i]['media'],dms[i]['shorted_media_url'], dms[i]['type'])
+                                tw.send_dm(sender_id, text)
                                 tw.delete_dm(id)
                         else:
                             print("DM deleted because its empty..")
@@ -44,7 +46,7 @@ def start():
             print("Direct message is empty...")
             dms = tw.read_dm()
             if len(dms) is 0 or dms is None:
-                time.sleep(20)
+                time.sleep(15)
 
 if __name__ == "__main__":
     start()

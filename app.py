@@ -21,6 +21,7 @@ def start():
                     # just use lower(message) and check it, but please remove the replace function line
                     if "sad" in message.lower():
                         if len(message) is not 0:
+                            tw.direct_message.new(user['sender_id'], text="Ditunggu ya, nanti kalau udah kekirim dikasih tau kok.")
                             if dms[i]['media'] is None:
                                 print("DM will be posted")
                                 tw.post_tweet(message)

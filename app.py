@@ -14,7 +14,7 @@ def start():
                 # I take sender_id just in case you want to know who's sent the message
                 sender_id = dms[i]['sender_id']
                 id = dms[i]['id']
-                text = "Tweet kamu udah terkirim ya. Kamu udahan ya sedihnya, jangan sedih terus :("
+                text = "[BOT] Tweet kamu udah terkirim ya. Kamu udahan ya sedihnya, jangan sedih terus :("
 
                 if len(message) is not 0 and len(message) < 280:
                     # prikitiw is the keyword
@@ -46,7 +46,7 @@ def start():
             print("Direct message is empty...")
             dms = tw.read_dm()
             if len(dms) is 0 or dms is None:
-                time.sleep(25)
+                time.sleep(30)
 
 if __name__ == "__main__":
     start()

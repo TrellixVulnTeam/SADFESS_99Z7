@@ -63,12 +63,12 @@ class Twitter:
                         dms.reverse()
 
             print(str(len(dms)) + " collected")
-            time.sleep(18)
+            time.sleep(20)
             return dms
 
         except Exception as ex:
             print(ex)
-            time.sleep(18)
+            time.sleep(20)
             pass
 
 

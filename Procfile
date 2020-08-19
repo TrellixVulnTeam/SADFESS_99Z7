@@ -1,2 +1,2 @@
 worker: python app.py
-#deploy
+#deploy heroku
